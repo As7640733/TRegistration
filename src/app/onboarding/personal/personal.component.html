@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="panel panel-info class">
+        <div class="panel-heading">
+            <h2 class="panel-title">1.Personal Information</h2>
+        </div>
+        <form #personalForm="ngForm">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="col-lg- col-xl-10" for="uploadProfile">Upload profile</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload" required />
+                        <input type="button" value="Upload Image" name="button" />
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="colorguardtest" for="name">Name:</label>
+                        <input type="text" id="uname" class="formInput" name="uname" placeholder="Username" required
+                            minlength="4" [(ngModel)]="usernames" #uname="ngModel" />
+                        <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alert alert-danger">
+                            <div *ngIf="uname.errors.required">
+                                Username is required.
+                            </div>
+                            <div *ngIf="uname.errors.minlength">
+                                Name must be at least 4 characters long.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="" for="password">password:</label>
+                        <input type="password" id="apass" class="formInput" name="apass" placeholder="password" required
+                            minlength="6" [(ngModel)]="password" #apass="ngModel" />
+                        <div *ngIf="apass.invalid && (apass.dirty || apass.touched)" class="alert alert-danger">
+                            <div *ngIf="apass.errors.required">
+                                Password is required.
+                            </div>
+                            <div *ngIf="apass.errors.minlength">
+                                Password must be at least 6 characters long.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="" for="Email">Email Id:</label>
+                        <input type="email" class="formInput" name="email" placeholder="E-mail" required ngModel
+                            #email="ngModel" [(ngModel)]="emailid" />
+                    </div>
+                    <div class="col-md-5">
+                        <label class="" for="password">confirm_password:</label>
+                        <input type="password" id="repassword" class="formInput" placeholder="Retype password"
+                            name="repassword" required minlength="6" [(ngModel)]="repass" #repassword="ngModel" />
+                        <div *ngIf="
+                password != repass && (repassword.dirty || repassword.touched)
+              " class="alert alert-danger">
+                            password do not matched.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="" for="Mobile_no">Mobile_No:</label>
+                        <input type="text" id="mobile" class="formInput" name="mobile" placeholder="Enter mobile no."
+                            required minlength="10" [(ngModel)]="mobiles" #mobile="ngModel" />
+                        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger">
+                            <div *ngIf="mobile.errors.required">
+                                Mobile_No is required.
+                            </div>
+                            <div *ngIf="mobile.errors.minlength">
+                                Mobile no.must be at least 10 characters long.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="" for="Date">Date of birth:</label>
+                        <input type="date" class="formInput" name="date" value="" required ngModel
+                            #fullname="ngModel" />
+                    </div>
+                </div>
+                <label for="gender">
+                    <h3>Gender:</h3>
+                </label>
+                <input type="radio" name="gender" value="male" class="radiopad" />male
+                <input type="radio" name="gender" value="female" class="radiopad" />female
+            </fieldset>
+            <a [routerLink]="['/onboarding/professional']"><button type="button" CLASS="btn-primary"
+                    style="height: 30PX; width: 200PX;float:right; margin-right:300px; color:red;"
+                    [disabled]="!personalForm.valid">
+                    Next
+                </button></a>
+        </form>
+    </div>
+</div>

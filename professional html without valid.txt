@@ -1,0 +1,88 @@
+<div class="container" style="height:1000px">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">2.Professional Information</h2>
+        </div>
+        <form [formGroup]="FormGroup">
+            <ng-container *ngIf="FormGroup.controls.itemRows != null">
+                <div *ngFor="
+            let itemrow of FormGroup.controls.itemRows.controls;
+            let i = index
+          " [formGroupName]="i">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label class="colorguardtest" for="name">School Name:</label>
+                            <input type="text" id="Sname" formControlName="Sname" class="formInput2" name="Sname" />
+                            <div *ngIf="Sname.invalid && (Sname.dirty || Sname.touched)" class="alert alert-danger">
+                                <div *ngIf="Sname.errors.required">
+                                    School name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <label class="">City:</label>
+                            <input type="text" formControlName="Cname" class="formInput" />
+                            <div *ngIf="apass.invalid && (apass.dirty || apass.touched)" class="alert alert-danger">
+                                <div *ngIf="apass.errors.required">
+                                    City name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <label class="">Select year of passing:</label>
+                            <select class="formInput2" formControlName="Yname">
+                                <option value="">Select year of passing </option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <br />
+
+                <div class="col-lg-5" style="padding: 15px;">
+                    <br />
+
+                    <button (click)="deleteRow(i)" class="btn btn-danger" style="margin: 15px;">
+                        Delete Previous Information
+                    </button>
+                    <button type="button" (click)="addNewRow()" class="btn-group-vertical">
+                        Add More Information
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+
+
+                <a [routerLink]="['/onboarding/personal']"><button type="button" class="btn-outline-danger"
+                        class="btn-secondary"
+                        style="height: 30PX; width: 200PX;float:right; margin-right:300px; margin-top:40px; margin-right:300px;">
+                        Previous
+                    </button></a>
+                <a [routerLink]=" ['/onboarding/address']"> <button type="submit" class="btn-primary"
+                        style="height: 30PX; width: 200PX; float:right; margin-right:300px; margin-top:40px;"
+                        [disabled]="!FormGroup.valid">
+                        Next
+                    </button></a>
+            </div>
+        </form>
+    </div>
+</div>

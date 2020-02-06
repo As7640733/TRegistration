@@ -1,0 +1,43 @@
+<div class="col-md-4 col-md-offset-4" id="login">
+  <section id="inner-wrapper" class="login">
+    <article>
+      <div class="login1">
+        <div class="loginBox">
+          <div class="form-bg">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+              <h2 class="headerlogin">Login page</h2>
+              <br />
+              <div class="formField">
+                <label class="label-class">
+                  Userid
+                </label>
+                <input type="text" class="formInput" name="username" placeholder="email/mobile-no" required ngModel
+                  #userid="ngModel" />
+                <br />
+                <span class="help-bpx" *ngIf="!userid.touched">please enter userid</span>
+              </div>
+
+              <div class="formField">
+                <label class="label-class">
+                  Password
+                </label>
+                <input type="password" class="formInput" name="password" placeholder="password" required ngModel />
+              </div>
+              <br />
+
+              <br />
+              <div class="formField">
+                <input type="submit" class="formButton" value="Login" [disabled]="!loginForm.valid" />
+              </div>
+            </form>
+            <br />
+
+            <div class="msg">
+              <a [routerLink]="['/registration']">Don't have account? Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>

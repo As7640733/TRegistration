@@ -1,0 +1,71 @@
+<div class="container" Style="height:1000px">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">4.Business Information</h2>
+        </div>
+        <form #personalForm='ngForm' (ngSubmit)="personalForm(personalForm)">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="colorguardtest" for="name">Company Name:</label>
+                        <input type="text" id="cname" class="formInput" name="cname" placeholder="Company Name" required
+                            [(ngModel)]="usernames" #cname="ngModel">
+                        <div *ngIf="cname.invalid && (cname.dirty || cname.touched)" class="alert alert-danger">
+                            <div *ngIf="cname.errors.required">
+                                Compan Name is required.
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="">About company:</label>
+                        <input type="text" id="acomp" class="formInput" name="acomp" placeholder="About company "
+                            required [(ngModel)]="aboutcompany" #acomp="ngModel">
+                        <div *ngIf="acomp.invalid && (acomp.dirty || acomp.touched)" class="alert alert-danger">
+                            <div *ngIf="acomp.errors.required">
+                                Flied is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="">GST Number:</label>
+                        <input type="text" id="gstno" class="formInput" name="gstno" placeholder="Enter GST NUMBER"
+                            required ngModel #gstno="ngModel">
+                        <div *ngIf="gstno.invalid && (gstno.dirty || gstno.touched)" class="alert alert-danger">
+                            <div *ngIf="gstno.errors.required">
+                                Field GST number.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <label class="">Pan Number:</label>
+                        <input type="text" id="pnum" class="formInput" placeholder="Enter your Pan card number"
+                            name="pnum" required [(ngModel)]="pannumaber" #pnum="ngModel">
+                        <div *ngIf="pnum.invalid && (pnum.dirty || pnum.touched)" class="alert alert-danger">
+                            <div *ngIf="pnum.errors.required">
+                                Pannumber is required.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <label class="col-lg- col-xl-10" for="uploadProfile">Upload Pan card</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload" required n>
+                        <input type="button" value="Upload Pan-Number" name="button">
+                        <br />
+                    </div>
+                </div>
+
+            </fieldset>
+            <a [routerLink]="['/login']"><button type="button" CLASS="btn-primary"
+                    style="height: 30PX; width: 200PX;float:right; margin-right:300px ;margin-top: 0px; "
+                    [disabled]="!personalForm.valid">Submit</button></a>
+
+        </form>
+    </div>
+</div>

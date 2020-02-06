@@ -1,0 +1,43 @@
+<div class="board-inner" id="status-buttons">
+
+    <div class="liner">
+        <ul class="nav nav-tabs" id="myTab">
+
+            <li>
+
+                <a routerLink="/onboarding/personal" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+                    <span class="round-tabs one">
+                        <i class="glyphicon glyphicon-user" style="color:rgb(105,230,143)"></i>
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/onboarding/professional" routerLinkActive="active" data-toggle="tab" title="work">
+                    <span class="round-tabs two">
+                        <i class="glyphicon glyphicon-tasks" style="color:rgb(105,230,143)"></i>
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/onboarding/address" routerLinkActive="active" data-toggle="tab" title="address">
+                    <span class="round-tabs three">
+                        <i class="glyphicon glyphicon-home" style="color:rgb(105,230,143)"></i>
+                    </span>
+                </a>
+            </li>
+
+
+            <li>
+                <a routerLink="/onboarding/business" routerLinkActive="active" data-toggle="tab" title="completed">
+                    <span class="round-tabs four">
+                        <i class="glyphicon glyphicon-ok" style="color:rgb(105,230,143)"></i>
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>

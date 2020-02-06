@@ -1,0 +1,109 @@
+<div class="container" Style="height:1000px">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">3.Add your Address</h2>
+        </div>
+        <div class="panel-body">
+            <form #addressForm="ngForm">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <input placeholder="Enter your address" type="text" class="formInput" id=" uname" name="uname"
+                            required minlength="4" [(ngModel)]="addnames1" #uname="ngModel">
+                        <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alert alert-danger">
+                            <div *ngIf="uname.errors.required">
+                                Address is required.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label">Street address</label>
+                        <input class="formInput" placeholder="street_number" id=" stname" name="stname" required
+                            minlength="4" [(ngModel)]="addnames2" #stname="ngModel">
+                        <div *ngIf="stname.invalid && (stname.dirty || stname.touched)" class="alert alert-danger">
+                            <div *ngIf="stname.errors.required">
+                                Enter your Street name.
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Route</label>
+                        <input class="formInput" id=" rtname" name="rtname" required minlength="4"
+                            [(ngModel)]="addnames3" #rtname="ngModel">
+                        <div *ngIf="rtname.invalid && (rtname.dirty || rtname.touched)" class="alert alert-danger">
+                            <div *ngIf="rtname.errors.required">
+                                Enter your Route.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label">City</label>
+                        <input class="formInput field" id="ctname" name="ctname" required minlength="4"
+                            [(ngModel)]="addname4" #ctname="ngModel">
+                        <div *ngIf="ctname.invalid && (ctname.dirty || ctname.touched)" class="alert alert-danger">
+                            <div *ngIf="ctname.errors.required">
+                                Enter your route
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">State</label>
+                        <input class="formInput" id="setname" name="setname" required minlength="4"
+                            [(ngModel)]="addnames5" #setname="ngModel">
+                        <div *ngIf="setname.invalid && (setname.dirty || setname.touched)" class="alert alert-danger">
+                            <div *ngIf="ctname.errors.required">
+                                Enter your State.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label">Zip code</label>
+                        <input class="formInput" id="ztname" name="ztname" required minlength="4"
+                            [(ngModel)]="addnames6" #ztname="ngModel">
+                        <div *ngIf="ztname.invalid && (ztname.dirty || ztname.touched)" class="alert alert-danger">
+                            <div *ngIf="ztname.errors.required">
+                                Enter your Zip Code in number.
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Country</label>
+                        <input class="formInput" id="cotname" name="cotname" required minlength="4"
+                            [(ngModel)]="addnames7" #cotname="ngModel">
+                        <div *ngIf="cotname.invalid && (cotname.dirty || cotname.touched)" class="alert alert-danger">
+                            <div *ngIf="ctname.errors.required">
+                                Enter your Country .
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <br />
+
+
+
+            <a [routerLink]="['/onboarding/business']"><button class="btn-primary"
+                    style="height: 30PX; width: 200PX; float:right; margin-right:300px;"
+                    [disabled]="!addressForm.valid">Next</button></a>
+            <a [routerLink]="['/onboarding/professional']"><button type="button" class="btn-secondary"
+                    style="height: 30PX; width: 200PX;float:right; margin-right:300px;">Previous</button></a>
+        </div>
+
+    </div>
+</div>
